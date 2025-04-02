@@ -22,7 +22,7 @@
 		text = target.value;
 		clearTimeout(timeoutId);
 		timeoutId = setTimeout(() => {
-			if (ws.readyState === WebSocket.OPEN && text.trim() !== '') {
+			if (ws.readyState === WebSocket.OPEN) {
 				ws.send(JSON.stringify({ type: 'text', content: text }));
 			}
 		}, 500);
