@@ -1,6 +1,5 @@
 <script lang="ts">
 	import TextEditor from '$lib/TextEditor.svelte';
-	export const ssr = false;
 </script>
 
 <main>

@@ -23,13 +23,12 @@
 
 	function handleUpdate(event: Event) {
 		const target = event.target as HTMLTextAreaElement;
-		text = target.value; // Update local state
+		text = target.value;
 
-		// Debouncing: clear previous timeout and set a new one
-		if (timeoutId) clearTimeout(timeoutId);
+		clearTimeout(timeoutId);
 		timeoutId = setTimeout(() => {
 			ws.send(JSON.stringify({ type: 'text', content: text }));
-		}, 300); // Adjust delay as needed (300ms)
+		}, 500); // Adjust debounce delay as needed
 	}
 </script>
 
